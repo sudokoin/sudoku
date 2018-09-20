@@ -15,6 +15,18 @@ func Symbols(board [9][9]int) bool {
 	return true
 }
 
+// Complete returns true iff all ints are in the range of 1-9.
+func Complete(board [9][9]int) bool {
+	for _, row := range board {
+		for _, val := range row {
+			if val < 1 || val > 9 {
+				return false
+			}
+		}
+	}
+	return true
+}
+
 // Solved returns true iff board is solved correctly.
 func Solved(board [9][9]int) bool {
 	for _, row := range board {
